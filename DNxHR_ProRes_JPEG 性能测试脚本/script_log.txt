@@ -1,0 +1,580 @@
+F:\dnxhrlb\ffmpeg-20200312-675bb1f-win64-static\bin> .\ffmpeg.exe -start_number 1 -f image2 -i "src (%d).ppm" -c:v dnxhd -profile:v dnxhr_lb dnxhrlb.mov
+ffmpeg version git-2020-03-12-675bb1f Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.2.1 (GCC) 20200122
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-ffnvcodec --enable-cuda-llvm --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt --enable-amf
+  libavutil      56. 42.100 / 56. 42.100
+  libavcodec     58. 75.100 / 58. 75.100
+  libavformat    58. 41.100 / 58. 41.100
+  libavdevice    58.  9.103 / 58.  9.103
+  libavfilter     7. 77.100 /  7. 77.100
+  libswscale      5.  6.101 /  5.  6.101
+  libswresample   3.  6.100 /  3.  6.100
+  libpostproc    55.  6.100 / 55.  6.100
+Input #0, image2, from 'src (%d).ppm':
+  Duration: 00:00:00.40, start: 0.000000, bitrate: N/A
+    Stream #0:0: Video: ppm, rgb24, 1920x1080, 25 tbr, 25 tbn, 25 tbc
+File 'dnxhrlb.mov' already exists. Overwrite? [y/N] y
+Stream mapping:
+  Stream #0:0 -> #0:0 (ppm (native) -> dnxhd (native))
+Press [q] to stop, [?] for help
+[dnxhd @ 000001a9dc607580] pixel format is incompatible with DNxHD profile
+[dnxhd @ 000001a9dc54d800] ff_frame_thread_encoder_init failed
+Error initializing output stream 0:0 -- Error while opening encoder for output stream #0:0 - maybe incorrect parameters such as bit_rate, rate, width or height
+Conversion failed!
+F:\dnxhrlb\ffmpeg-20200312-675bb1f-win64-static\bin> .\ffmpeg.exe -start_number 1 -f image2 -i "src (%d).ppm" -c:v dnxhd -profile:v dnxhr_lb -pix_fmt yuv422p -c:a pcm_s16le output.mov
+ffmpeg version git-2020-03-12-675bb1f Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.2.1 (GCC) 20200122
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-ffnvcodec --enable-cuda-llvm --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt --enable-amf
+  libavutil      56. 42.100 / 56. 42.100
+  libavcodec     58. 75.100 / 58. 75.100
+  libavformat    58. 41.100 / 58. 41.100
+  libavdevice    58.  9.103 / 58.  9.103
+  libavfilter     7. 77.100 /  7. 77.100
+  libswscale      5.  6.101 /  5.  6.101
+  libswresample   3.  6.100 /  3.  6.100
+  libpostproc    55.  6.100 / 55.  6.100
+Input #0, image2, from 'src (%d).ppm':
+  Duration: 00:00:00.40, start: 0.000000, bitrate: N/A
+    Stream #0:0: Video: ppm, rgb24, 1920x1080, 25 tbr, 25 tbn, 25 tbc
+Stream mapping:
+  Stream #0:0 -> #0:0 (ppm (native) -> dnxhd (native))
+Press [q] to stop, [?] for help
+Output #0, mov, to 'output.mov':
+  Metadata:
+    encoder         : Lavf58.41.100
+    Stream #0:0: Video: dnxhd (DNXHR LB) (AVdh / 0x68645641), yuv422p, 1920x1080, q=2-1024, 200 kb/s, 25 fps, 12800 tbn, 25 tbc
+    Metadata:
+      encoder         : Lavc58.75.100 dnxhd
+frame=   10 fps=0.0 q=4.0 Lsize=    1841kB time=00:00:00.36 bitrate=41878.5kbits/s speed=0.802x
+video:1840kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.041398%
+F:\dnxhrlb\ffmpeg-20200312-675bb1f-win64-static\bin> .\ffmpeg.exe -i .\output.mov "dst%d.ppm"
+ffmpeg version git-2020-03-12-675bb1f Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.2.1 (GCC) 20200122
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-ffnvcodec --enable-cuda-llvm --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt --enable-amf
+  libavutil      56. 42.100 / 56. 42.100
+  libavcodec     58. 75.100 / 58. 75.100
+  libavformat    58. 41.100 / 58. 41.100
+  libavdevice    58.  9.103 / 58.  9.103
+  libavfilter     7. 77.100 /  7. 77.100
+  libswscale      5.  6.101 /  5.  6.101
+  libswresample   3.  6.100 /  3.  6.100
+  libpostproc    55.  6.100 / 55.  6.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\output.mov':
+  Metadata:
+    major_brand     : qt
+    minor_version   : 512
+    compatible_brands: qt
+    encoder         : Lavf58.41.100
+  Duration: 00:00:00.40, start: 0.000000, bitrate: 37698 kb/s
+    Stream #0:0: Video: dnxhd (DNXHR LB) (AVdh / 0x68645641), yuv422p(tv, bt709/unknown/unknown), 1920x1080, 37683 kb/s, 25 fps, 25 tbr, 12800 tbn, 12800 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc58.75.100 dnxhd
+Stream mapping:
+  Stream #0:0 -> #0:0 (dnxhd (native) -> ppm (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'dst%d.ppm':
+  Metadata:
+    major_brand     : qt
+    minor_version   : 512
+    compatible_brands: qt
+    encoder         : Lavf58.41.100
+    Stream #0:0: Video: ppm, rgb24, 1920x1080, q=2-31, 200 kb/s, 25 fps, 25 tbn, 25 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc58.75.100 ppm
+frame=   10 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.40 bitrate=N/A speed=2.78x
+video:60750kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+F:\dnxhrlb\ffmpeg-20200312-675bb1f-win64-static\bin> .\ffmpeg.exe -start_number 1 -f image2 -i "src (%d).ppm" -c:v dnxhd -profile:v dnxhr_lb -pix_fmt yuv422 -c:a pcm_s16le output.mov
+ffmpeg version git-2020-03-12-675bb1f Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.2.1 (GCC) 20200122
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-ffnvcodec --enable-cuda-llvm --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt --enable-amf
+  libavutil      56. 42.100 / 56. 42.100
+  libavcodec     58. 75.100 / 58. 75.100
+  libavformat    58. 41.100 / 58. 41.100
+  libavdevice    58.  9.103 / 58.  9.103
+  libavfilter     7. 77.100 /  7. 77.100
+  libswscale      5.  6.101 /  5.  6.101
+  libswresample   3.  6.100 /  3.  6.100
+  libpostproc    55.  6.100 / 55.  6.100
+Input #0, image2, from 'src (%d).ppm':
+  Duration: 00:00:00.40, start: 0.000000, bitrate: N/A
+    Stream #0:0: Video: ppm, rgb24, 1920x1080, 25 tbr, 25 tbn, 25 tbc
+Unknown pixel format requested: yuv422.
+F:\dnxhrlb\ffmpeg-20200312-675bb1f-win64-static\bin> .\ffmpeg.exe -start_number 1 -f image2 -i "src (%d).ppm" -c:v dnxhd -profile:v dnxhr_lb -pix_fmt yuv422p -c:a pcm_s16le dnxhrlb.mov
+ffmpeg version git-2020-03-12-675bb1f Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.2.1 (GCC) 20200122
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-ffnvcodec --enable-cuda-llvm --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt --enable-amf
+  libavutil      56. 42.100 / 56. 42.100
+  libavcodec     58. 75.100 / 58. 75.100
+  libavformat    58. 41.100 / 58. 41.100
+  libavdevice    58.  9.103 / 58.  9.103
+  libavfilter     7. 77.100 /  7. 77.100
+  libswscale      5.  6.101 /  5.  6.101
+  libswresample   3.  6.100 /  3.  6.100
+  libpostproc    55.  6.100 / 55.  6.100
+Input #0, image2, from 'src (%d).ppm':
+  Duration: 00:00:00.40, start: 0.000000, bitrate: N/A
+    Stream #0:0: Video: ppm, rgb24, 1920x1080, 25 tbr, 25 tbn, 25 tbc
+Stream mapping:
+  Stream #0:0 -> #0:0 (ppm (native) -> dnxhd (native))
+Press [q] to stop, [?] for help
+Output #0, mov, to 'dnxhrlb.mov':
+  Metadata:
+    encoder         : Lavf58.41.100
+    Stream #0:0: Video: dnxhd (DNXHR LB) (AVdh / 0x68645641), yuv422p, 1920x1080, q=2-1024, 200 kb/s, 25 fps, 12800 tbn, 25 tbc
+    Metadata:
+      encoder         : Lavc58.75.100 dnxhd
+frame=   10 fps=0.0 q=4.0 Lsize=    1841kB time=00:00:00.36 bitrate=41878.5kbits/s speed=0.836x
+video:1840kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.041398%
+F:\dnxhrlb\ffmpeg-20200312-675bb1f-win64-static\bin> .\ffmpeg.exe -start_number 1 -f image2 -i "src (%d).ppm" -c:v dnxhd -profile:v dnxhr_sq -pix_fmt yuv422p -c:a pcm_s16le dnxhrsq.mov
+ffmpeg version git-2020-03-12-675bb1f Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.2.1 (GCC) 20200122
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-ffnvcodec --enable-cuda-llvm --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt --enable-amf
+  libavutil      56. 42.100 / 56. 42.100
+  libavcodec     58. 75.100 / 58. 75.100
+  libavformat    58. 41.100 / 58. 41.100
+  libavdevice    58.  9.103 / 58.  9.103
+  libavfilter     7. 77.100 /  7. 77.100
+  libswscale      5.  6.101 /  5.  6.101
+  libswresample   3.  6.100 /  3.  6.100
+  libpostproc    55.  6.100 / 55.  6.100
+Input #0, image2, from 'src (%d).ppm':
+  Duration: 00:00:00.40, start: 0.000000, bitrate: N/A
+    Stream #0:0: Video: ppm, rgb24, 1920x1080, 25 tbr, 25 tbn, 25 tbc
+Stream mapping:
+  Stream #0:0 -> #0:0 (ppm (native) -> dnxhd (native))
+Press [q] to stop, [?] for help
+Output #0, mov, to 'dnxhrsq.mov':
+  Metadata:
+    encoder         : Lavf58.41.100
+    Stream #0:0: Video: dnxhd (DNXHR SQ) (AVdh / 0x68645641), yuv422p, 1920x1080, q=2-1024, 200 kb/s, 25 fps, 12800 tbn, 25 tbc
+    Metadata:
+      encoder         : Lavc58.75.100 dnxhd
+frame=   10 fps=0.0 q=1.0 Lsize=    5921kB time=00:00:00.36 bitrate=134701.7kbits/s speed=0.91x
+video:5920kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.013395%
+F:\dnxhrlb\ffmpeg-20200312-675bb1f-win64-static\bin> .\ffmpeg.exe -start_number 1 -f image2 -i "src (%d).ppm" -c:v dnxhd -profile:v dnxhr_hq -pix_fmt yuv422p -c:a pcm_s16le dnxhrhq.mov
+ffmpeg version git-2020-03-12-675bb1f Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.2.1 (GCC) 20200122
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-ffnvcodec --enable-cuda-llvm --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt --enable-amf
+  libavutil      56. 42.100 / 56. 42.100
+  libavcodec     58. 75.100 / 58. 75.100
+  libavformat    58. 41.100 / 58. 41.100
+  libavdevice    58.  9.103 / 58.  9.103
+  libavfilter     7. 77.100 /  7. 77.100
+  libswscale      5.  6.101 /  5.  6.101
+  libswresample   3.  6.100 /  3.  6.100
+  libpostproc    55.  6.100 / 55.  6.100
+Input #0, image2, from 'src (%d).ppm':
+  Duration: 00:00:00.40, start: 0.000000, bitrate: N/A
+    Stream #0:0: Video: ppm, rgb24, 1920x1080, 25 tbr, 25 tbn, 25 tbc
+Stream mapping:
+  Stream #0:0 -> #0:0 (ppm (native) -> dnxhd (native))
+Press [q] to stop, [?] for help
+Output #0, mov, to 'dnxhrhq.mov':
+  Metadata:
+    encoder         : Lavf58.41.100
+    Stream #0:0: Video: dnxhd (DNXHR HQ) (AVdh / 0x68645641), yuv422p, 1920x1080, q=2-1024, 200 kb/s, 25 fps, 12800 tbn, 25 tbc
+    Metadata:
+      encoder         : Lavc58.75.100 dnxhd
+frame=   10 fps=0.0 q=1.0 Lsize=    8961kB time=00:00:00.36 bitrate=203863.7kbits/s speed=0.948x
+video:8960kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.008850%
+F:\dnxhrlb\ffmpeg-20200312-675bb1f-win64-static\bin> .\ffmpeg.exe -i .\dnxhrlb.mov "lb%d.ppm"
+ffmpeg version git-2020-03-12-675bb1f Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.2.1 (GCC) 20200122
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-ffnvcodec --enable-cuda-llvm --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt --enable-amf
+  libavutil      56. 42.100 / 56. 42.100
+  libavcodec     58. 75.100 / 58. 75.100
+  libavformat    58. 41.100 / 58. 41.100
+  libavdevice    58.  9.103 / 58.  9.103
+  libavfilter     7. 77.100 /  7. 77.100
+  libswscale      5.  6.101 /  5.  6.101
+  libswresample   3.  6.100 /  3.  6.100
+  libpostproc    55.  6.100 / 55.  6.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\dnxhrlb.mov':
+  Metadata:
+    major_brand     : qt
+    minor_version   : 512
+    compatible_brands: qt
+    encoder         : Lavf58.41.100
+  Duration: 00:00:00.40, start: 0.000000, bitrate: 37698 kb/s
+    Stream #0:0: Video: dnxhd (DNXHR LB) (AVdh / 0x68645641), yuv422p(tv, bt709/unknown/unknown), 1920x1080, 37683 kb/s, 25 fps, 25 tbr, 12800 tbn, 12800 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc58.75.100 dnxhd
+Stream mapping:
+  Stream #0:0 -> #0:0 (dnxhd (native) -> ppm (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'lb%d.ppm':
+  Metadata:
+    major_brand     : qt
+    minor_version   : 512
+    compatible_brands: qt
+    encoder         : Lavf58.41.100
+    Stream #0:0: Video: ppm, rgb24, 1920x1080, q=2-31, 200 kb/s, 25 fps, 25 tbn, 25 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc58.75.100 ppm
+frame=   10 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.40 bitrate=N/A speed=2.84x
+video:60750kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+F:\dnxhrlb\ffmpeg-20200312-675bb1f-win64-static\bin> .\ffmpeg.exe -i .\dnxhrsq.mov "sq%d.ppm"
+ffmpeg version git-2020-03-12-675bb1f Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.2.1 (GCC) 20200122
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-ffnvcodec --enable-cuda-llvm --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt --enable-amf
+  libavutil      56. 42.100 / 56. 42.100
+  libavcodec     58. 75.100 / 58. 75.100
+  libavformat    58. 41.100 / 58. 41.100
+  libavdevice    58.  9.103 / 58.  9.103
+  libavfilter     7. 77.100 /  7. 77.100
+  libswscale      5.  6.101 /  5.  6.101
+  libswresample   3.  6.100 /  3.  6.100
+  libpostproc    55.  6.100 / 55.  6.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\dnxhrsq.mov':
+  Metadata:
+    major_brand     : qt
+    minor_version   : 512
+    compatible_brands: qt
+    encoder         : Lavf58.41.100
+  Duration: 00:00:00.40, start: 0.000000, bitrate: 121257 kb/s
+    Stream #0:0: Video: dnxhd (DNXHR SQ) (AVdh / 0x68645641), yuv422p(tv, bt709/unknown/unknown), 1920x1080, 121241 kb/s, 25 fps, 25 tbr, 12800 tbn, 12800 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc58.75.100 dnxhd
+Stream mapping:
+  Stream #0:0 -> #0:0 (dnxhd (native) -> ppm (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'sq%d.ppm':
+  Metadata:
+    major_brand     : qt
+    minor_version   : 512
+    compatible_brands: qt
+    encoder         : Lavf58.41.100
+    Stream #0:0: Video: ppm, rgb24, 1920x1080, q=2-31, 200 kb/s, 25 fps, 25 tbn, 25 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc58.75.100 ppm
+frame=   10 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.40 bitrate=N/A speed=2.63x
+video:60750kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+F:\dnxhrlb\ffmpeg-20200312-675bb1f-win64-static\bin> .\ffmpeg.exe -i .\dnxhrhq.mov "hq%d.ppm"
+ffmpeg version git-2020-03-12-675bb1f Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.2.1 (GCC) 20200122
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-ffnvcodec --enable-cuda-llvm --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt --enable-amf
+  libavutil      56. 42.100 / 56. 42.100
+  libavcodec     58. 75.100 / 58. 75.100
+  libavformat    58. 41.100 / 58. 41.100
+  libavdevice    58.  9.103 / 58.  9.103
+  libavfilter     7. 77.100 /  7. 77.100
+  libswscale      5.  6.101 /  5.  6.101
+  libswresample   3.  6.100 /  3.  6.100
+  libpostproc    55.  6.100 / 55.  6.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\dnxhrhq.mov':
+  Metadata:
+    major_brand     : qt
+    minor_version   : 512
+    compatible_brands: qt
+    encoder         : Lavf58.41.100
+  Duration: 00:00:00.40, start: 0.000000, bitrate: 183517 kb/s
+    Stream #0:0: Video: dnxhd (DNXHR HQ) (AVdh / 0x68645641), yuv422p(tv, bt709/unknown/unknown), 1920x1080, 183500 kb/s, 25 fps, 25 tbr, 12800 tbn, 12800 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc58.75.100 dnxhd
+Stream mapping:
+  Stream #0:0 -> #0:0 (dnxhd (native) -> ppm (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'hq%d.ppm':
+  Metadata:
+    major_brand     : qt
+    minor_version   : 512
+    compatible_brands: qt
+    encoder         : Lavf58.41.100
+    Stream #0:0: Video: ppm, rgb24, 1920x1080, q=2-31, 200 kb/s, 25 fps, 25 tbn, 25 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc58.75.100 ppm
+frame=   10 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.40 bitrate=N/A speed=2.53x
+video:60750kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+F:\dnxhrlb\ffmpeg-20200312-675bb1f-win64-static\bin> .\ffmpeg.exe -start_number 1 -f image2 -i "src (%d).ppm" -c:v prores_ks -profile:v 0 -pix_fmt yuv422p -c:a pcm_s16le proresproxy.mov
+ffmpeg version git-2020-03-12-675bb1f Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.2.1 (GCC) 20200122
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-ffnvcodec --enable-cuda-llvm --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt --enable-amf
+  libavutil      56. 42.100 / 56. 42.100
+  libavcodec     58. 75.100 / 58. 75.100
+  libavformat    58. 41.100 / 58. 41.100
+  libavdevice    58.  9.103 / 58.  9.103
+  libavfilter     7. 77.100 /  7. 77.100
+  libswscale      5.  6.101 /  5.  6.101
+  libswresample   3.  6.100 /  3.  6.100
+  libpostproc    55.  6.100 / 55.  6.100
+Input #0, image2, from 'src (%d).ppm':
+  Duration: 00:00:00.40, start: 0.000000, bitrate: N/A
+    Stream #0:0: Video: ppm, rgb24, 1920x1080, 25 tbr, 25 tbn, 25 tbc
+Stream mapping:
+  Stream #0:0 -> #0:0 (ppm (native) -> prores (prores_ks))
+Press [q] to stop, [?] for help
+Incompatible pixel format 'yuv422p' for codec 'prores_ks', auto-selecting format 'yuv422p10le'
+Output #0, mov, to 'proresproxy.mov':
+  Metadata:
+    encoder         : Lavf58.41.100
+    Stream #0:0: Video: prores (prores_ks) (apco / 0x6F637061), yuv422p10le, 1920x1080, q=2-31, 200 kb/s, 25 fps, 12800 tbn, 25 tbc
+    Metadata:
+      encoder         : Lavc58.75.100 prores_ks
+frame=   10 fps=9.6 q=-0.0 Lsize=    1849kB time=00:00:00.36 bitrate=42057.7kbits/s speed=0.345x
+video:1848kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.040693%
+F:\dnxhrlb\ffmpeg-20200312-675bb1f-win64-static\bin> .\ffmpeg.exe -start_number 1 -f image2 -i "src (%d).ppm" -c:v prores_ks -profile:v 1 -pix_fmt yuv422p -c:a pcm_s16le proreslt.mov
+ffmpeg version git-2020-03-12-675bb1f Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.2.1 (GCC) 20200122
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-ffnvcodec --enable-cuda-llvm --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt --enable-amf
+  libavutil      56. 42.100 / 56. 42.100
+  libavcodec     58. 75.100 / 58. 75.100
+  libavformat    58. 41.100 / 58. 41.100
+  libavdevice    58.  9.103 / 58.  9.103
+  libavfilter     7. 77.100 /  7. 77.100
+  libswscale      5.  6.101 /  5.  6.101
+  libswresample   3.  6.100 /  3.  6.100
+  libpostproc    55.  6.100 / 55.  6.100
+Input #0, image2, from 'src (%d).ppm':
+  Duration: 00:00:00.40, start: 0.000000, bitrate: N/A
+    Stream #0:0: Video: ppm, rgb24, 1920x1080, 25 tbr, 25 tbn, 25 tbc
+Stream mapping:
+  Stream #0:0 -> #0:0 (ppm (native) -> prores (prores_ks))
+Press [q] to stop, [?] for help
+Incompatible pixel format 'yuv422p' for codec 'prores_ks', auto-selecting format 'yuv422p10le'
+Output #0, mov, to 'proreslt.mov':
+  Metadata:
+    encoder         : Lavf58.41.100
+    Stream #0:0: Video: prores (prores_ks) (apcs / 0x73637061), yuv422p10le, 1920x1080, q=2-31, 200 kb/s, 25 fps, 12800 tbn, 25 tbc
+    Metadata:
+      encoder         : Lavc58.75.100 prores_ks
+[prores_ks @ 000001f9bc6b1280] Packet too small: is 457608, needs 871934 (slice: 1302). Correct allocation is not implemented. Update your FFmpeg version to the newest one from Git. If the problem still occurs, it means that your file has a feature which has not been implemented.
+[prores_ks @ 000001f9bc6b1280] If you want to help, upload a sample of this file to ftp://upload.ffmpeg.org/incoming/ and contact the ffmpeg-devel mailing list. (ffmpeg-devel@ffmpeg.org)
+frame=   10 fps=9.5 q=-0.0 Lsize=    4386kB time=00:00:00.36 bitrate=99773.2kbits/s speed=0.341x
+video:4385kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.017417%
+F:\dnxhrlb\ffmpeg-20200312-675bb1f-win64-static\bin> .\ffmpeg.exe -start_number 1 -f image2 -i "src (%d).ppm" -c:v prores_ks -profile:v 2 -pix_fmt yuv422p -c:a pcm_s16le proresstandard.mov
+ffmpeg version git-2020-03-12-675bb1f Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.2.1 (GCC) 20200122
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-ffnvcodec --enable-cuda-llvm --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt --enable-amf
+  libavutil      56. 42.100 / 56. 42.100
+  libavcodec     58. 75.100 / 58. 75.100
+  libavformat    58. 41.100 / 58. 41.100
+  libavdevice    58.  9.103 / 58.  9.103
+  libavfilter     7. 77.100 /  7. 77.100
+  libswscale      5.  6.101 /  5.  6.101
+  libswresample   3.  6.100 /  3.  6.100
+  libpostproc    55.  6.100 / 55.  6.100
+Input #0, image2, from 'src (%d).ppm':
+  Duration: 00:00:00.40, start: 0.000000, bitrate: N/A
+    Stream #0:0: Video: ppm, rgb24, 1920x1080, 25 tbr, 25 tbn, 25 tbc
+Stream mapping:
+  Stream #0:0 -> #0:0 (ppm (native) -> prores (prores_ks))
+Press [q] to stop, [?] for help
+Incompatible pixel format 'yuv422p' for codec 'prores_ks', auto-selecting format 'yuv422p10le'
+Output #0, mov, to 'proresstandard.mov':
+  Metadata:
+    encoder         : Lavf58.41.100
+    Stream #0:0: Video: prores (prores_ks) (apcn / 0x6E637061), yuv422p10le, 1920x1080, q=2-31, 200 kb/s, 25 fps, 12800 tbn, 25 tbc
+    Metadata:
+      encoder         : Lavc58.75.100 prores_ks
+frame=   10 fps=0.0 q=-0.0 Lsize=    6253kB time=00:00:00.36 bitrate=142258.8kbits/s speed=0.386x
+video:6252kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.012527%
+F:\dnxhrlb\ffmpeg-20200312-675bb1f-win64-static\bin> .\ffmpeg.exe -start_number 1 -f image2 -i "src (%d).ppm" -c:v prores_ks -profile:v 3 -pix_fmt yuv422p -c:a pcm_s16le proreshq.mov
+ffmpeg version git-2020-03-12-675bb1f Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.2.1 (GCC) 20200122
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-ffnvcodec --enable-cuda-llvm --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt --enable-amf
+  libavutil      56. 42.100 / 56. 42.100
+  libavcodec     58. 75.100 / 58. 75.100
+  libavformat    58. 41.100 / 58. 41.100
+  libavdevice    58.  9.103 / 58.  9.103
+  libavfilter     7. 77.100 /  7. 77.100
+  libswscale      5.  6.101 /  5.  6.101
+  libswresample   3.  6.100 /  3.  6.100
+  libpostproc    55.  6.100 / 55.  6.100
+Input #0, image2, from 'src (%d).ppm':
+  Duration: 00:00:00.40, start: 0.000000, bitrate: N/A
+    Stream #0:0: Video: ppm, rgb24, 1920x1080, 25 tbr, 25 tbn, 25 tbc
+Stream mapping:
+  Stream #0:0 -> #0:0 (ppm (native) -> prores (prores_ks))
+Press [q] to stop, [?] for help
+Incompatible pixel format 'yuv422p' for codec 'prores_ks', auto-selecting format 'yuv422p10le'
+Output #0, mov, to 'proreshq.mov':
+  Metadata:
+    encoder         : Lavf58.41.100
+    Stream #0:0: Video: prores (prores_ks) (apch / 0x68637061), yuv422p10le, 1920x1080, q=2-31, 200 kb/s, 25 fps, 12800 tbn, 25 tbc
+    Metadata:
+      encoder         : Lavc58.75.100 prores_ks
+frame=   10 fps=9.7 q=-0.0 Lsize=    9341kB time=00:00:00.36 bitrate=212519.1kbits/s speed=0.35x
+video:9340kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.008385%
+F:\dnxhrlb\ffmpeg-20200312-675bb1f-win64-static\bin> .\ffmpeg.exe -i .\proreshq.mov "proreshq%d.ppm"
+ffmpeg version git-2020-03-12-675bb1f Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.2.1 (GCC) 20200122
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-ffnvcodec --enable-cuda-llvm --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt --enable-amf
+  libavutil      56. 42.100 / 56. 42.100
+  libavcodec     58. 75.100 / 58. 75.100
+  libavformat    58. 41.100 / 58. 41.100
+  libavdevice    58.  9.103 / 58.  9.103
+  libavfilter     7. 77.100 /  7. 77.100
+  libswscale      5.  6.101 /  5.  6.101
+  libswresample   3.  6.100 /  3.  6.100
+  libpostproc    55.  6.100 / 55.  6.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\proreshq.mov':
+  Metadata:
+    major_brand     : qt
+    minor_version   : 512
+    compatible_brands: qt
+    encoder         : Lavf58.41.100
+  Duration: 00:00:00.40, start: 0.000000, bitrate: 191308 kb/s
+    Stream #0:0: Video: prores (HQ) (apch / 0x68637061), yuv422p10le(tv, progressive), 1920x1080, 191292 kb/s, 25 fps, 25 tbr, 12800 tbn, 12800 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc58.75.100 prores_ks
+Stream mapping:
+  Stream #0:0 -> #0:0 (prores (native) -> ppm (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'proreshq%d.ppm':
+  Metadata:
+    major_brand     : qt
+    minor_version   : 512
+    compatible_brands: qt
+    encoder         : Lavf58.41.100
+    Stream #0:0: Video: ppm, rgb48be, 1920x1080, q=2-31, 200 kb/s, 25 fps, 25 tbn, 25 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc58.75.100 ppm
+frame=   10 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.40 bitrate=N/A speed=0.944x
+video:121500kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+F:\dnxhrlb\ffmpeg-20200312-675bb1f-win64-static\bin> .\ffmpeg.exe -i .\proreslt.mov "proreslt%d.ppm"
+ffmpeg version git-2020-03-12-675bb1f Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.2.1 (GCC) 20200122
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-ffnvcodec --enable-cuda-llvm --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt --enable-amf
+  libavutil      56. 42.100 / 56. 42.100
+  libavcodec     58. 75.100 / 58. 75.100
+  libavformat    58. 41.100 / 58. 41.100
+  libavdevice    58.  9.103 / 58.  9.103
+  libavfilter     7. 77.100 /  7. 77.100
+  libswscale      5.  6.101 /  5.  6.101
+  libswresample   3.  6.100 /  3.  6.100
+  libpostproc    55.  6.100 / 55.  6.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\proreslt.mov':
+  Metadata:
+    major_brand     : qt
+    minor_version   : 512
+    compatible_brands: qt
+    encoder         : Lavf58.41.100
+  Duration: 00:00:00.40, start: 0.000000, bitrate: 89815 kb/s
+    Stream #0:0: Video: prores (LT) (apcs / 0x73637061), yuv422p10le(tv, progressive), 1920x1080, 89799 kb/s, 25 fps, 25 tbr, 12800 tbn, 12800 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc58.75.100 prores_ks
+Stream mapping:
+  Stream #0:0 -> #0:0 (prores (native) -> ppm (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'proreslt%d.ppm':
+  Metadata:
+    major_brand     : qt
+    minor_version   : 512
+    compatible_brands: qt
+    encoder         : Lavf58.41.100
+    Stream #0:0: Video: ppm, rgb48be, 1920x1080, q=2-31, 200 kb/s, 25 fps, 25 tbn, 25 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc58.75.100 ppm
+frame=   10 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.40 bitrate=N/A speed= 1.1x
+video:121500kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+F:\dnxhrlb\ffmpeg-20200312-675bb1f-win64-static\bin> .\ffmpeg.exe -i .\proresproxy.mov "proresproxy%d.ppm"
+ffmpeg version git-2020-03-12-675bb1f Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.2.1 (GCC) 20200122
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-ffnvcodec --enable-cuda-llvm --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt --enable-amf
+  libavutil      56. 42.100 / 56. 42.100
+  libavcodec     58. 75.100 / 58. 75.100
+  libavformat    58. 41.100 / 58. 41.100
+  libavdevice    58.  9.103 / 58.  9.103
+  libavfilter     7. 77.100 /  7. 77.100
+  libswscale      5.  6.101 /  5.  6.101
+  libswresample   3.  6.100 /  3.  6.100
+  libpostproc    55.  6.100 / 55.  6.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\proresproxy.mov':
+  Metadata:
+    major_brand     : qt
+    minor_version   : 512
+    compatible_brands: qt
+    encoder         : Lavf58.41.100
+  Duration: 00:00:00.40, start: 0.000000, bitrate: 37860 kb/s
+    Stream #0:0: Video: prores (Proxy) (apco / 0x6F637061), yuv422p10le(tv, progressive), 1920x1080, 37844 kb/s, 25 fps, 25 tbr, 12800 tbn, 12800 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc58.75.100 prores_ks
+Stream mapping:
+  Stream #0:0 -> #0:0 (prores (native) -> ppm (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'proresproxy%d.ppm':
+  Metadata:
+    major_brand     : qt
+    minor_version   : 512
+    compatible_brands: qt
+    encoder         : Lavf58.41.100
+    Stream #0:0: Video: ppm, rgb48be, 1920x1080, q=2-31, 200 kb/s, 25 fps, 25 tbn, 25 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc58.75.100 ppm
+frame=   10 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.40 bitrate=N/A speed=1.14x
+video:121500kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+F:\dnxhrlb\ffmpeg-20200312-675bb1f-win64-static\bin> .\ffmpeg.exe -i .\proresstandard.mov "proresstandard%d.ppm"
+ffmpeg version git-2020-03-12-675bb1f Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.2.1 (GCC) 20200122
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-ffnvcodec --enable-cuda-llvm --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt --enable-amf
+  libavutil      56. 42.100 / 56. 42.100
+  libavcodec     58. 75.100 / 58. 75.100
+  libavformat    58. 41.100 / 58. 41.100
+  libavdevice    58.  9.103 / 58.  9.103
+  libavfilter     7. 77.100 /  7. 77.100
+  libswscale      5.  6.101 /  5.  6.101
+  libswresample   3.  6.100 /  3.  6.100
+  libpostproc    55.  6.100 / 55.  6.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.\proresstandard.mov':
+  Metadata:
+    major_brand     : qt
+    minor_version   : 512
+    compatible_brands: qt
+    encoder         : Lavf58.41.100
+  Duration: 00:00:00.40, start: 0.000000, bitrate: 128060 kb/s
+    Stream #0:0: Video: prores (Standard) (apcn / 0x6E637061), yuv422p10le(tv, progressive), 1920x1080, 128044 kb/s, 25 fps, 25 tbr, 12800 tbn, 12800 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc58.75.100 prores_ks
+Stream mapping:
+  Stream #0:0 -> #0:0 (prores (native) -> ppm (native))
+Press [q] to stop, [?] for help
+Output #0, image2, to 'proresstandard%d.ppm':
+  Metadata:
+    major_brand     : qt
+    minor_version   : 512
+    compatible_brands: qt
+    encoder         : Lavf58.41.100
+    Stream #0:0: Video: ppm, rgb48be, 1920x1080, q=2-31, 200 kb/s, 25 fps, 25 tbn, 25 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+      encoder         : Lavc58.75.100 ppm
+frame=   10 fps=0.0 q=-0.0 Lsize=N/A time=00:00:00.40 bitrate=N/A speed=0.94x
+video:121500kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+F:\dnxhrlb\ffmpeg-20200312-675bb1f-win64-static\bin> .\ffmpeg.exe -start_number 1 -f image2 -i "src (%d).ppm" -c:v dnxhd -profile:v dnxhr_hqx -pix_fmt yuv422p -c:a pcm_s16le dnxhrhqx.mov
+ffmpeg version git-2020-03-12-675bb1f Copyright (c) 2000-2020 the FFmpeg developers
+  built with gcc 9.2.1 (GCC) 20200122
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-ffnvcodec --enable-cuda-llvm --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt --enable-amf
+  libavutil      56. 42.100 / 56. 42.100
+  libavcodec     58. 75.100 / 58. 75.100
+  libavformat    58. 41.100 / 58. 41.100
+  libavdevice    58.  9.103 / 58.  9.103
+  libavfilter     7. 77.100 /  7. 77.100
+  libswscale      5.  6.101 /  5.  6.101
+  libswresample   3.  6.100 /  3.  6.100
+  libpostproc    55.  6.100 / 55.  6.100
+Input #0, image2, from 'src (%d).ppm':
+  Duration: 00:00:00.40, start: 0.000000, bitrate: N/A
+    Stream #0:0: Video: ppm, rgb24, 1920x1080, 25 tbr, 25 tbn, 25 tbc
+Stream mapping:
+  Stream #0:0 -> #0:0 (ppm (native) -> dnxhd (native))
+Press [q] to stop, [?] for help
+[dnxhd @ 0000028a518a3f00] pixel format is incompatible with DNxHR HQX profile
+[dnxhd @ 0000028a517eda80] ff_frame_thread_encoder_init failed
+Error initializing output stream 0:0 -- Error while opening encoder for output stream #0:0 - maybe incorrect parameters such as bit_rate, rate, width or height
+Conversion failed!
+F:\dnxhrlb\ffmpeg-20200312-675bb1f-win64-static\bin>

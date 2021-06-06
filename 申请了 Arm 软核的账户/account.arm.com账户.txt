@@ -1,4 +1,10 @@
 用户名：
 mlin99@shu.edu.cn
+
 密码：
 Asitlab2018
+
+Arm 下载相关的网站：
+https://www.arm.com/resources/designstart
+https://silver.arm.com/browse/
+https://developer.arm.com/downloads/search

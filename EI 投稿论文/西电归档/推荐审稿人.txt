@@ -1,0 +1,23 @@
+李强
+音视频编码
+副教授
+重庆邮电大学
+liqiang@cqupt.edu.cn
+
+郭宝龙
+图像处理与网络智能技术，模式识别与智能系统，光电检测
+教授 博士
+西电
+blguo@xidian.edu.cn
+
+倪江群
+多媒体信息处理和通信、信息隐藏和数字取证
+教授
+中山大学
+issjqni@mail.sysu.edu.cn
+
+安平
+智能视频编码 光场数据压缩与重建
+教授
+上海大学
+anping@shu.edu.cn
