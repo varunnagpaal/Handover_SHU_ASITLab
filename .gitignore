@@ -1,7 +1,7 @@
 # File created using '.gitignore Generator' for Visual Studio Code: https://bit.ly/vscode-gig
 
-# Created by https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,tex,latex,compressed,compressedarchive,compression
-# Edit at https://www.toptal.com/developers/gitignore?templates=windows,visualstudiocode,tex,latex,compressed,compressedarchive,compression
+# Created by https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,tex,latex,compression,compressedarchive,compressed,images
+# Edit at https://www.toptal.com/developers/gitignore?templates=windows,visualstudiocode,tex,latex,compression,compressedarchive,compressed,images
 
 ### Compressed ###
 *.7z
@@ -186,6 +186,71 @@
 *.??_
 
 
+### Images ###
+# JPEG
+*.jpg
+*.jpeg
+*.jpe
+*.jif
+*.jfif
+*.jfi
+
+# JPEG 2000
+*.jp2
+*.j2k
+*.jpf
+*.jpx
+*.jpm
+*.mj2
+
+# JPEG XR
+*.jxr
+*.hdp
+*.wdp
+
+# Graphics Interchange Format
+*.gif
+
+# RAW
+*.raw
+
+# Web P
+*.webp
+
+# Portable Network Graphics
+*.png
+
+# Animated Portable Network Graphics
+*.apng
+
+# Multiple-image Network Graphics
+*.mng
+
+# Tagged Image File Format
+*.tiff
+*.tif
+
+# Scalable Vector Graphics
+*.svg
+*.svgz
+
+# Portable Document Format
+*.pdf
+
+# X BitMap
+*.xbm
+
+# BMP
+*.bmp
+*.dib
+
+# ICO
+*.ico
+
+# 3D Images
+*.3dm
+*.max
+
 ### LaTeX ###
 ## Core latex/pdflatex auxiliary files:
 *.aux
@@ -296,9 +361,6 @@ acs-*.bib
 *.glg
 *.glo
 *.gls
-*.*-glg
-*.*-glo
-*.*-gls
 *.glsdefs
 *.lzs
 
@@ -310,6 +372,7 @@ acs-*.bib
 
 # gregoriotex
 *.gaux
+*.glog
 *.gtex
 
 # htlatex
@@ -325,8 +388,8 @@ acs-*.bib
 
 # knitr
 *-concordance.tex
-# TODO Comment the next line if you want to keep your tikz graphics files
-*.tikz
+# TODO Uncomment the next line if you use knitr and want to ignore its generated tikz files
+# *.tikz
 *-tikzDictionary
 
 # listings
@@ -344,7 +407,6 @@ acs-*.bib
 *.maf
 *.mlf
 *.mlt
-*.mtc
 *.mtc[0-9]*
 *.slf[0-9]*
 *.slt[0-9]*
@@ -356,6 +418,9 @@ _minted*
 
 # morewrites
 *.mw
+
+# newpax
+*.newpax
 
 # nomencl
 *.nlg
@@ -466,6 +531,9 @@ TSWLatexianTemp*
 # Makeindex log files
 *.lpz
 
+# xwatermark package
+*.xwm
+
 # REVTeX puts footnotes in the bibliography by default, unless the nofootinbib
 # option is specified. Footnotes are the stored in a file with suffix Notes.bib.
 # Uncomment the next line to have this generated file ignored.
@@ -527,7 +595,8 @@ TSWLatexianTemp*
 # hyperref
 
 # knitr
-# TODO Comment the next line if you want to keep your tikz graphics files
+# TODO Uncomment the next line if you use knitr and want to ignore its generated tikz files
+# *.tikz
 
 # listings
 
@@ -540,6 +609,8 @@ TSWLatexianTemp*
 # minted
 
 # morewrites
+
+# newpax
 
 # nomencl
 
@@ -603,6 +674,8 @@ TSWLatexianTemp*
 
 # Makeindex log files
 
+# xwatermark package
+
 # REVTeX puts footnotes in the bibliography by default, unless the nofootinbib
 # option is specified. Footnotes are the stored in a file with suffix Notes.bib.
 # Uncomment the next line to have this generated file ignored.
@@ -619,6 +692,9 @@ TSWLatexianTemp*
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
+
+# Local History for Visual Studio Code
+.history/
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
@@ -650,8 +726,9 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,tex,latex,compressed,compressedarchive,compression
+# End of https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,tex,latex,compression,compressedarchive,compressed,images
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 
 **/outline.txt
+*.ppm

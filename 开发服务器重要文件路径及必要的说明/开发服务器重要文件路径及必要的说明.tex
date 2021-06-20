@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xeCJK}
+\usepackage{indentfirst} 
+\usepackage{geometry}
+\geometry{a4paper,top=2.54cm,bottom=2.54cm,left=3.18cm,right=3.18cm}
+\parindent 2em % 段首缩进
+\pagenumbering{roman}
+
+\begin{document}
+
+\author{林庆毫}
+\title{开发服务器的相关说明}
+\maketitle
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+\section{开发软件的安装路径}
+在开发服务器的 ServerB 上，有一通过 NFS 共享的 /export 目录，四台服务器都可访问。该目录下安装开发所需的各类软件，如 Matlab、Xilinx 系列软件、Cadence 系列软件、Synopsys 系列软件。各类软件都安装在 ServerB 上导致其存储空间紧张，因此勿在 ServerB 上进行开发工作。
+
+\section{软件的配置脚本}
+软件的配置通过用户各自的\ .bashrc 脚本完成。/export/Wares/README/ 目录下有说明文档和一份\ .bashrc 样例供参考。
+
+几乎所有的软件配置脚本都存放在 /export/Wares/sh/ 目录下。
+
+\section{软件的证书}
+所有的软件证书都存放在 /export/Wares/sh/lic/ 目录下。
+
+\section{用户组与用户的管理}
+服务器的用户组有 asitlab/asitlab\_a/asitlab\_b 等，但目前其实并无严格的分组规划，一般来说将用户加入 asitlab 组即可。
+
+用户统一以“名的首字母+姓的全拼”组成，添加新用户的方法可参考 /export/project/unify/qhlin/miscellaneous/useradd\_script.sh 脚本。
+
+\section{停电时需要进行的操作}
+建议设置定时提醒，每周查看一次学校官网通告，确认是否有停电计划。
+
+停电前在群内通知老师、同学，提醒提前保存工作结果。停电前 30 分钟关闭所有 4 台开发服务器，由于服务器存在一些不明问题，输入关机命令后可能进入“ssh 无法再连接上，但服务器仍未关机且一直能 ping 通”的状态。因此建议在输入关机命令前强制 kill 绝大部分正在运行的程序，可以降低发生问题的概率。
+
+另外建议最后关闭 ServerB，因其存在可能影响其他服务器的 NFS 进程。
+
+\section{开发服务器存在的问题}
+ServerB 与 D （A 与 C 未验证过），在连接屏幕用键鼠直接操作时，从屏幕上看会卡在开机进度条界面，但此时可通过 ssh 和 X11 等服务正常连接，且能看到图形界面。问题产生原因不明。
+
+\end{document}
