@@ -30,16 +30,19 @@
 \section{用户组与用户的管理}
 服务器的用户组有 asitlab/asitlab\_a/asitlab\_b 等，但目前其实并无严格的分组规划，一般来说将用户加入 asitlab 组即可。
 
-用户统一以“名的首字母+姓的全拼”组成，添加新用户的方法可参考 /export/project/unify/qhlin/miscellaneous/useradd\_script.sh 脚本。
+用户统一以“名的首字母+姓的全拼”组成。
+
+添加新用户的方法可参考 /export/project/unify/qhlin/miscellaneous/useradd\_script.sh 脚本。
 
 \section{停电时需要进行的操作}
 建议设置定时提醒，每周查看一次学校官网通告，确认是否有停电计划。
+\url{https://www.shu.edu.cn/index/tzgg.htm}
 
 停电前在群内通知老师、同学，提醒提前保存工作结果。停电前 30 分钟关闭所有 4 台开发服务器，由于服务器存在一些不明问题，输入关机命令后可能进入“ssh 无法再连接上，但服务器仍未关机且一直能 ping 通”的状态。因此建议在输入关机命令前强制 kill 绝大部分正在运行的程序，可以降低发生问题的概率。
 
 另外建议最后关闭 ServerB，因其存在可能影响其他服务器的 NFS 进程。
 
 \section{开发服务器存在的问题}
-ServerB 与 D （A 与 C 未验证过），在连接屏幕用键鼠直接操作时，从屏幕上看会卡在开机进度条界面，但此时可通过 ssh 和 X11 等服务正常连接，且能看到图形界面。问题产生原因不明。
+ServerB 与 D （A 与 C 未确认过），在连接屏幕用键鼠直接操作时，从屏幕上看会卡在开机进度条界面，但此时可通过 ssh 和 X11 等服务正常连接，且能看到图形界面。问题产生原因不明。
 
 \end{document}

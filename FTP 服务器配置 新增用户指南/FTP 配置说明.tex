@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xeCJK}
+\usepackage{indentfirst} 
+\usepackage{geometry}
+\geometry{a4paper,top=2.54cm,bottom=2.54cm,left=3.18cm,right=3.18cm}
+\parindent 2em % 段首缩进
+\pagenumbering{roman}
+
+\begin{document}
+
+\author{林庆毫}
+\title{FTP 配置说明}
+\maketitle
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+\section{FTP 连接方法}
+\begin{enumerate}
+	\item 连接键盘、鼠标、屏幕使用。
+
+	\item Windows 远程桌面连接
+
+	      连接实验室网络 ASITLAB\_1，打开 Windows 远程桌面连接，按下图填写计算机 192.168.2.254，用户名 Administrator，连接密码为 asitlab。
+	      \begin{figure}[!h]
+		      \centering
+		      \includegraphics[scale=0.3]{../assets/images/2021-06-23_18-10-47.png}
+	      \end{figure}
+\end{enumerate}
+
+\section{FTP 服务端方案}
+使用 FileZilla Server 软件搭建。
+
+\section{FTP 目录说明}
+FTP 根目录位于服务器 C 盘的 FTP\_storage。
+
+temp 目录：临时交互用。
+
+pub 目录：主要目录，其中 asitlab 子文件内含各用户自己管理的文档。
+
+incoming 目录：结构与 pub 类似。
+
+\section{FTP 用户添加}
+用户统一以“名的首字母+姓的全拼”组成。
+
+打开 FTP 桌面上的 FileZilla Server Interface，按下图操作。
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=0.6]{../assets/images/2021-06-23_18-22-27.png}
+\end{figure}
+
+
+\end{document}
